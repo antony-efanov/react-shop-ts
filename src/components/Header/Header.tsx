@@ -9,10 +9,10 @@ import { onClickFav } from "../../store/favItems/slice";
 import { onClickOrders } from "../../store/orders/slice";
 
 const Header = () => {
+  const dispatch = useAppDispatch();
   const { cartItems, cartOpened } = useAppSelector((store) => store.cartItems);
   const { favItems, favOpened } = useAppSelector((store) => store.favItems);
   const { ordersOpened } = useAppSelector((store) => store.orders);
-  const dispatch = useAppDispatch();
 
   const onCart = () => {
     dispatch(onClickCart());
@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className="header">
       <Link className="brand" to="/">
         <div className="brand__logo">
           <img width={65} src={Logo} alt="Logo" />

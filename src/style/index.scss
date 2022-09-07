@@ -1,0 +1,27 @@
+@import "./essentials/import";
+// @import "../components/Cart/style";
+@import "../components/Header/style";
+@import "../components/Catalog/style";
+// @import "../components/Card/style";
+// @import "../components/Footer/style";
+// @import "../components/EmptyPage/style";
+
+html {
+  font-family: "Roboto", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: $colorBG;
+}
+
+.wrapper {
+  margin-block-start: 2rem;
+  margin-inline: auto;
+  max-width: 67.5rem;
+  border-radius: 2rem;
+
+  color: $colorMainDark;
+  background-color: $colorMainWhite;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
+}
