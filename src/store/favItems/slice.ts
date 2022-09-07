@@ -5,12 +5,21 @@ import { getFavItems } from "./thunk";
 const initialState: InitialState = {
   favItems: [],
   loading: "pending",
+  favOpened: false,
 };
 
 const favItemsSlice = createSlice({
   name: "cartProducts",
   initialState,
-  reducers: {},
+  reducers: {
+    onClickFav: (state) => {
+      state.favOpened === false
+        ? (state.favOpened = true)
+        : (state.favOpened = false);
+
+      console.log(state.favOpened);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getFavItems.pending, (state) => {
@@ -27,4 +36,5 @@ const favItemsSlice = createSlice({
   },
 });
 
+export const { onClickFav } = favItemsSlice.actions;
 export default favItemsSlice.reducer;

@@ -2,8 +2,9 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import items from "./items/slice";
 import cartItems from "./cartItems/slice";
 import favItems from "./favItems/slice";
+import orders from "./orders/slice";
 
-const rootReducer = combineReducers({ items, cartItems, favItems });
+const rootReducer = combineReducers({ items, cartItems, favItems, orders });
 
 export const store = configureStore({
   reducer: rootReducer,

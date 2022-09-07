@@ -5,7 +5,7 @@ import { getCartItems } from "./thunk";
 const initialState: InitialState = {
   cartItems: [],
   loading: "pending",
-  cartVisibility: false,
+  cartOpened: false,
 };
 
 const cartItemsSlice = createSlice({
@@ -13,8 +13,11 @@ const cartItemsSlice = createSlice({
   initialState,
   reducers: {
     onClickCart: (state) => {
-      if (state.cartVisibility === false) state.cartVisibility = true;
-      state.cartVisibility = false;
+      state.cartOpened === false
+        ? (state.cartOpened = true)
+        : (state.cartOpened = false);
+
+      console.log(state.cartOpened);
     },
   },
   extraReducers: (builder) => {

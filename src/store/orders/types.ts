@@ -1,7 +1,7 @@
 import { Item } from "../types";
 
 export interface InitialState {
-  cartItems: Item[];
+  orders: Item[];
   loading: "pending" | "success" | "error";
-  cartOpened: boolean;
+  ordersOpened: boolean;
 }
